@@ -12,3 +12,137 @@
   @extend .table;
   @extend .table-bordered;
 }
+
+.navbar {
+	z-index: 0;
+}
+.footer {
+	background-color: $gray-dark;
+	margin: 0;
+	color: #fff;
+	font-family: $headings-font-family;
+	padding: 35px 0 20px 0;
+
+	@media(max-width: $screen-xs-max) {
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		text-align: center;
+		padding: 0;
+
+		li {
+			line-height: 1.3;
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+	}
+	p {
+		padding-top: 30px;
+		margin: 0;
+		font-size: 11px;
+	}
+	.footer-social-icons {
+		li {
+			display: inline-block;
+			margin-right: 5px;
+			a img{
+				width: 40px;
+				@media(max-width: $screen-xs-max) {
+					text-align: center;
+					margin-top: 20px;
+				} 
+			}
+		}
+	}
+}
+.blog-page-header {
+	padding: 40px 0;
+	margin-top: -64px;
+	text-transform: uppercase;
+	background: url(../img/symphony.png);
+	position: relative;
+
+	-webkit-box-shadow: inset 0px -70px 108px -105px rgba(0, 0, 0, 0.7), 0px -12px 20px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0px -70px 108px -105px rgba(0, 0, 0, 0.7), 0px -12px 20px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -70px 108px -105px rgba(0, 0, 0, 0.7), 0px -12px 20px 0px rgba(0, 0, 0, 0.3);
+
+	h1 {
+		font-size: 45px;
+		letter-spacing: 3px;
+	}
+	h1, h2 {
+		margin: 0;
+		color: $dark;
+	}
+}
+
+/* Styles for embedded-form goes here */
+.embedded-form {
+	margin: 25px 0;
+}
+
+.second-headline {
+	h3, h2 {
+		margin: 0;
+		text-align: center;
+	}
+	p {
+		padding: 25px 0;
+		margin-top: 25px;
+	}
+}
+
+.post-header-home {
+	padding: 30px 0;
+	border-bottom: 1px solid #f2f2f2;
+	&.no-image {
+		.blog-post-body {
+			width: 100%;
+		}
+	}
+
+
+	&:nth-child(even) {
+		.blog-post-image {
+			float: right;
+		}	
+		.blog-post-body {
+			float: left;
+		}
+	}
+
+	&:nth-child(odd) {
+		.blog-post-image {
+			float: left;
+		}	
+		.blog-post-body {
+			float: right;
+		}
+	}
+	.blog-post-image {
+		height: 250px;
+		width: 40%;
+		@media(max-width: $screen-xs-max) { 
+			width: 100%;
+			margin-bottom: 25px;
+		}
+	}
+	.blog-post-body {
+		width: 55%;
+		@media(max-width: $screen-xs-max) { 
+			width: 100%;
+		}
+	}
+	.post-excerpt-home {
+		margin-bottom: 0;
+		p {
+			margin: 0;
+			padding-top: 10px;
+		}
+	}
+}
