@@ -21,7 +21,6 @@
 				<a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
 			</h1>
 			{% include post-header-home.html %}
-
 			<div class="post-excerpt-home">
 				{{ post.content | strip_html | truncatewords: 35 }}
 				<p class="text-right"><a href="{{ post.url | prepend:site.baseurl }}">Continue Reading &rarr;</a></p>

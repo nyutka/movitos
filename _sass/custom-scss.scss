@@ -1,5 +1,6 @@
 // Add your own custom CSS here.
 @import "pygments-tomorrow";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .post-content img,
 .post-excerpt-home img,
@@ -150,8 +151,43 @@
 		}
 	}
 	.post-title-home {
+		padding-bottom: 15px;
 		@media(max-width: $screen-xs-max) { 
 			margin-top: 15px;
 		}
+	}
+}
+.post-title-main {
+	font-size: 26px;
+}
+.post-content {
+	p {
+		font-size: $font-size-base;
+		font-family: 'Open Sans', sans-serif;
+	}
+}
+.blog-page-image {
+	min-height: 280px;
+	margin: 25px 0 79px 0;
+	@media(max-width: $screen-xs-max) {
+		margin: 20px 0;
+	}
+}
+.blog-next-image {
+	height: 250px;
+	display: block;
+	margin-bottom: 20px;
+	@media(max-width: $screen-xs-max) {
+		margin-bottom: 48px;
+	}
+}
+.post-nav-first {
+	@media(max-width: $screen-xs-max) {
+		border-bottom: 1px solid #dcdcdc;
+		padding-bottom: 15px;
+	}
+	@media(max-width: $screen-sm-max) {
+		border-bottom: 1px solid #dcdcdc;
+		padding-bottom: 15px;
 	}
 }
