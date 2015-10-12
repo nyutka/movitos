@@ -1,6 +1,5 @@
 // Add your own custom CSS here.
 @import "pygments-tomorrow";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 .post-content img,
 .post-excerpt-home img,
@@ -13,7 +12,6 @@
   @extend .table;
   @extend .table-bordered;
 }
-
 .navbar {
 	z-index: 0;
 }
@@ -163,7 +161,6 @@
 .post-content {
 	p {
 		font-size: $font-size-base;
-		font-family: 'Open Sans', sans-serif;
 	}
 }
 .blog-page-image {
