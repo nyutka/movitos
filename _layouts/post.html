@@ -2,9 +2,13 @@
 layout: default
 ---
 
-{% if page.image %}
-  <div class="blog-page-image" style="background: url('{{ page.image }}') center/cover;"></div>
-{% endif %}
+
+<div class="image-position">
+  {% if page.image %}
+    <div class="blog-page-image" style="background: url('{{ page.image }}') center/cover;"></div>
+    <img src="{{ page.image }}" alt="{{ page.description }}">
+  {% endif %}
+</div>
 <div class="post-header">
   <h1 class="post-title-main">{{ page.title }}</h1>
   {% include post-header.html %}
@@ -20,10 +24,15 @@ layout: default
     <div class="post-navs row">
       {% if page.previous %}
         <div class="col-md-6 post-nav post-nav-first">
-          {% if page.image %}
-            <div class="blog-next-image" style="background: url('{{ page.image }}') center/cover;"></div>
-          {% endif %}
-          <h2 class="post-title-link"><a href="{{ page.previous.url | prepend:site.baseurl | number_of_words 100 }}">{{ page.previous.title }}</a></h2>
+          <div class="image-position">
+            <a href="{{ page.previous.url | prepend:site.baseurl}}">
+              {% if page.previous.image %}
+                <div class="blog-next-image" style="background: url('{{ page.previous.image }}') center/cover;"></div>
+                <img src="{{ page.previous.image }}" alt="{{ page.previous.description }}">
+              {% endif %}
+            </a>
+          </div>
+          <h2 class="post-title-link post-next-link"><a href="{{ page.previous.url | prepend:site.baseurl | number_of_words 100 }}">{{ page.previous.title }}</a></h2>
           <h3>{{ page.previous.summary }}</h3>
           {{ page.previous.excerpt | markdownify | truncatewords: 100 }}
           <p class="text-right"><a href="{{ page.previous.url | prepend:site.baseurl }}">Continue Reading &rarr;</a></p>
@@ -31,10 +40,15 @@ layout: default
       {% endif %}
       {% if page.next %}
         <div class="col-md-6 post-nav">
-          {% if page.image %}
-            <div class="blog-next-image" style="background: url('{{ page.image }}') center/cover;"></div>
-          {% endif %}
-          <h2 class="post-title-link"><a href="{{ page.next.url | prepend:site.baseurl }}">{{ page.next.title }}</a></h2>
+          <div class="image-position">
+            <a href="{{ page.next.url | prepend:site.baseurl}}">
+              {% if page.next.image %}
+                <div class="blog-next-image" style="background: url('{{ page.next.image }}') center/cover;"></div>
+                <img src="{{ page.next.image }}" alt="{{ page.next.description }}">
+              {% endif %}
+            </a>
+          </div>
+          <h2 class="post-title-link post-next-link"><a href="{{ page.next.url | prepend:site.baseurl }}">{{ page.next.title }}</a></h2>
           <h3>{{ page.next.summary }}</h3>
           {{ page.next.excerpt | markdownify | truncatewords: 100 }}
           <p class="text-right"><a href="{{ page.next.url | prepend:site.baseurl }}">Continue Reading &rarr;</a></p>

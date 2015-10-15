@@ -12,9 +12,16 @@
 
 {% for post in site.posts limit:site.data.theme.num_home_posts %}
 	<div class="post-header-home clearfix {% unless post.image %}no-image{% endunless %}">
-		{% if post.image %}
-		<a href="{{ post.url | prepend:site.baseurl }}" class="blog-post-image" style="background: url('{{ post.image }}') center/cover;"></a>
-		{% endif %}
+		<div class="image-position">
+            <a href="{{ post.url | prepend:site.baseurl }}">
+            <div class="post-image-position">
+              {% if post.image %}
+                <div class="blog-post-image" style="background: url('{{ post.image }}') center/cover;"></div>
+                <img src="{{ post.image }}" class="blog-post-image" alt="{{ post.description }}">
+              {% endif %}
+            </div>
+            </a>
+        </div>
 
 		<div class="blog-post-body">
 			<h1 class="post-title-home">
