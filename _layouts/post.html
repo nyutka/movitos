@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <div class="image-position">
   {% if page.image %}
     <div class="blog-page-image" style="background: url('{{ page.image }}') center/cover;"></div>
@@ -21,7 +20,7 @@ layout: default
 </div>
 {% if site.data.theme.show_post_navs %}
   {% if page.previous or page.next %}
-    <div class="post-navs row">
+    <div class="post-navs">
       {% if page.previous %}
         <div class="col-md-6 post-nav post-nav-first">
           <div class="image-position">
