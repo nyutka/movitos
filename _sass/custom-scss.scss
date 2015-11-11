@@ -117,17 +117,6 @@
 			padding-bottom: 50px;
 		}
 	}
-	#email-style {
-		input.mce_inline_error {
-			margin-top: 42px;
-		}
-		div.mce_inline_error {
-			margin-right: 15px;
-			@media(max-width: $screen-xs-max) { 
-				margin: 0;
-			}
-		}
-	}
 	.response {
 		color: #058505;
 		line-height: 1;
@@ -138,15 +127,15 @@
 		padding: 30px;
 		border-radius: 10px;
 	}
-	#mc_embed_signup .button {
+	.button_signup {
 		color: #FFFEFE;
-		background-color: rgba(255, 246, 240, 0);
-		border: 1px solid #FFCE07;
+		background-color: rgb(61, 86, 110);
 		height: 46px;
 		line-height: 46px;
-		font-size: 16px;
+		font-size: 22px;
 		padding: 0 25px;
 		border-radius: 5px;
+		border: none;
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.44);
 		}
@@ -173,32 +162,32 @@
 			padding-bottom: 5px;
 		}
 	}
-	.form-control:focus, #mc_embed_signup input:focus {
-    	border-color: rgba(249, 249, 249, 0.6);
-    	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px rgba(249, 249, 249, 0.6);
-		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px rgba(249, 249, 249, 0.6);
+	.form-control:focus {
+    	border-color: #ccc;
+    	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px rgb(188, 188, 188);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px rgb(188, 188, 188);
 	}
-	#mc_embed_signup div.mce_inline_error {
-		padding: 5px 10px; 
-    	background-color: rgba(0, 0, 0, 0.78);
-    	border-radius: 5px;
-    	color: #6B0505;
-    	margin-bottom: 0;
+	.valid {
+		color: #0F880F;
 	}
-	#mc_embed_signup_scroll {
-		display: inline;
+	.error {
+		color: #811F1F;
+		&.required {
+			border-color: #811F1F;
+			box-shadow: none;
+		}
 	}
 
 }
 .left-margin-form{
-	#mc_embed_signup .button {
+	.signup-button {
 		display: block;
 		width: 94%;
 	}
 	p {
 		padding-bottom: 100px;
 	}
-	.margin-form, #mc_embed_signup {
+	.margin-form {
 		padding: 15px;
 		border-radius: 10px;
 		p {
