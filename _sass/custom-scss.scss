@@ -446,3 +446,37 @@
 		box-shadow: none;
 	}
 }
+.thank-you-body {
+	margin-bottom: 64px;
+	-webkit-box-shadow: 0px 0px 29px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 29px -4px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 29px -4px rgba(0,0,0,0.75);
+	border: 1px solid #DFDFDE;
+	padding: 50px 15px;
+	background-color: #fffffc;
+	background-image: url(/img/lightpaperfibers.png);
+	h1, h2, p  {
+		color: #3D566E
+	}
+	h1 {
+		font-size: 60px;
+		text-shadow:rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
+		@media(max-width: $screen-xs-min) { 
+			font-size: 40px;
+		}
+	}
+}
+.twitter-btn {
+	text-decoration: none;
+	background-color: rgb(255, 184, 0);
+	color: #fff;
+	padding: 10px 30px;
+	margin-top: 16px;
+	display: inline-block;
+	i {
+		margin-left: 10px;
+	}
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
