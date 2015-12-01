@@ -2,7 +2,7 @@
 layout: post
 title: "Test blog 1"
 summary: how does this look?
-image: http://placehold.it/350x150
+image: https://unsplash.it/200/300?image=0
 description: Sed ut perspiciatis unde
 ---
 
