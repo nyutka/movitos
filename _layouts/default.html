@@ -4,6 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@wordituk">
+    
+    {% if page.title %}
+      <meta name="twitter:title" content="{{ page.title }}">
+    {% else %}
+      <meta name="twitter:title" content="{{ site.title }}">
+    {% endif %}
+
+    {% if page.url %}
+      <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    {% endif %}
+
+    {% if page.description %}
+      <meta name="twitter:description" content="{{ page.description }}">
+    {% else %}
+      <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
+
+    {% if page.image %}
+      <meta name="twitter:image" content="{{ page.image }}">
+    {% endif %}
+
     <link rel="stylesheet" href="{{ "/stylesheets/shiori.css" | prepend:site.baseurl }}">
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,700italic,400italic|Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +45,7 @@
         window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/privacy-policy","theme":"light-top"};
       </script>
 
-      <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
     <!-- End Cookie Consent plugin -->
   </head>
   <body>

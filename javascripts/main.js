@@ -34,18 +34,71 @@ if ($('.twitter-event').length) {
 	}(document, "script", "twitter-wjs"));
 
 	// and bind twitter events when loaded
-	twttr.ready(function() {
-		twttr.events.bind(
-			'tweet',
-			function (event) { 
-				console.log(event);
-				var redirect = $(event.target).data('redirect');
-				if (redirect) {
-					window.location = redirect;
-				}
-			}
-		);
-	});
+	// twttr.ready(function() {
+	// 	twttr.events.bind(
+	// 		'tweet',
+	// 		function (event) { 
+	// 			console.log(event);
+	// 			var redirect = $(event.target).data('redirect');
+	// 			if (redirect) {
+	// 				window.location = redirect;
+	// 			}
+	// 		}
+	// 	);
+	// });
 
 }
 
+// Mailchimp contac form
+$("#contactForm").submit(function(e) {
+	e.preventDefault();
+
+	var $that = $(this);
+
+	var $name = $that.find('[name=name]'),
+		$email = $that.find('[name=email]'),
+		$subject = $that.find('[name=subject]'),
+		$message = $that.find('[name=message]');
+
+	var $button = $that.find('#msg button');
+
+	$button.addClass('loading').prop('disabled', true);
+
+	$.ajax({
+		type: "POST",
+		url: "https://mandrillapp.com/api/1.0/messages/send.json",
+		data: {
+			'key': 'o1ycFk7uJPaLiXGX65hN0Q',
+			'message': {
+				'from_email': $email.val(),
+				'from_name': $name.val(),
+				'headers': {
+					'Reply-To': $email.val()
+				},
+				'subject': $subject.val(),
+				'text': $message.val(),
+				'to': [
+					{
+						'email': 'hellothere@wordit.com',
+						'name': 'Wordit',
+						'type': 'to'
+					}
+				]
+			}
+		}
+	})
+	.done(function(response) {
+		$button.removeClass('loading').prop('disabled', false);
+		$name.val('');
+		$email.val('');
+		$subject.val('');
+		$message.val('');
+
+		$('.status-message').addClass('hidden');
+		$('.status-message.text-success').removeClass('hidden');
+	})
+	.fail(function(response) {
+		$('.status-message').addClass('hidden');
+		$('.status-message.text-danger').removeClass('hidden');
+	});
+});

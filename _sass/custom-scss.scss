@@ -480,3 +480,70 @@
 		text-decoration: none;
 	}
 }
+.contact-page {
+		input, select, textarea {
+			width: 100%;
+			border-radius: 0;
+			border: 1px solid #FDDB10;
+			padding: 0 10px;
+			box-shadow: none;
+			outline: 0;
+			&:focus {
+				border-color: #2D77B2;
+				box-shadow: none;
+			}
+		}
+		input {
+			height: 46px;
+		}
+		label {
+			color: $btn-default-color;
+		}
+		#msg {
+			label {
+				position: static;
+			}
+			textarea {
+				resize: none;
+				border-radius: 0;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+				font-size: 19px;
+				background-color: transparent;
+			}
+			button {
+				margin: 15px 0;
+				border-radius: 0;
+				padding: 10px 30px;
+				font-size: 21px;
+				color: #fff;
+				width: 100%;
+				background-color: $dark;
+
+				i {
+					margin-left: 10px;
+
+				&:last-child {
+					display: none;
+				}
+			}
+
+			&.loading {
+				i:first-child {
+					display: none;
+				}
+				i:last-child {
+					display: inline-block;
+				}
+			}
+
+			&:hover {
+				background-color: $dark-brand-primary;
+				-webkit-transition: background-color 1.5s ease-out;
+				-moz-transition: background-color 1.5s ease-out;
+				-o-transition: background-color 1.5s ease-out;
+				transition: background-color 1.5s ease-out;
+			}
+		}
+	}
+}
