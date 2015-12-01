@@ -5,8 +5,6 @@ layout: page
 <div class="contact-page col-sm-8 col-sm-offset-2 ">
 	<h1 class="text-center">Contact</h1>
 	<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	<p class="text-success status-message hidden">Succesfully sent.</p>
-	<p class="text-danger status-message hidden">Error sending email.</p>
 	<div>
 		<form id="contactForm">
 			<div class="form-group">
@@ -22,7 +20,7 @@ layout: page
 			<div class="form-group">
 				<label>How can I help you?</label>
 				<span class="bar"></span>
-				<select class="form-control" name="subject" required>
+				<select class="form-control" name="subject">
 					<option></option>
 					<option>1</option>
 					<option>2</option>
@@ -41,6 +39,8 @@ layout: page
 					<i class="fa fa-refresh fa-spin"></i>
 				</button>
 			</div>
+			<p class="text-success status-message hidden">Succesfully sent.</p>
+			<p class="text-danger status-message hidden">Error sending email.</p>
 		</form>
 	</div>
 </div>
