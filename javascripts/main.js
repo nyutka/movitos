@@ -49,9 +49,9 @@ if ($('.twitter-event').length) {
 
 }
 
-// Validatr.js
 if ($('#contactForm').length) {
 	var $form = $('#contactForm');	
+
 	$form.validatr();
 
 	// Mailchimp contac form
